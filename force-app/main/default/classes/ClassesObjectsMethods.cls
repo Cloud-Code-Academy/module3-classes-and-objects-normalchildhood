@@ -26,7 +26,7 @@
  * Math class: https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_math.htm
  * Classes: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_understanding.htm
  *
- * @author Your Name
+ * @author Mychal Tepker
  */
 
 public with sharing class ClassesObjectsMethods {
@@ -39,19 +39,19 @@ public with sharing class ClassesObjectsMethods {
      * @return A list containing the length of the string, a substring of the string, and the string in lower case.
      */
     public static List<String> practiceStringMethods() {
+        List<String> helloList = new List<String>();
         // Initialize a String with 'Hello, Salesforce!'
-        
-        // Get the length of the String        
+        String hello = 'Hello, Salesforce!';
+        // Get the length of the String 
+        helloList.add(0, string.valueOf(hello.length()));   
         // Get a substring of the String of the first 5 characters
+        helloList.add(1, hello.substring(0, 5));
         // Convert the String to lower case
-        
-        // Return the list with the string data
-        // In the first position add the string length
-        // In the second position add the substring
-        // In the third position add the string in lower case
+        helloList.add(2, hello.toLowerCase());
 
-        return null; // Replace null with the variable you used to store the result
-    }
+        return helloList; // Replace null with the variable you used to store the result
+    }   
+
 
     /**
      * Question 2
@@ -62,14 +62,14 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Boolean> checkStringContent(String input) {
         // Initialize a list to store the results
-        
+        List<Boolean> contentList = new List<Boolean>();
         // Check if the string starts with 'Sales'
-        
+        contentList.add(input.startsWith('Sales'));
         // Check if the string ends with 'Force'
-        
+        contentList.add(input.endsWith('Force'));
         // Check if the string contains 'Awesome'
-        
-        return null; // Replace null with the variable you used to store the result
+        contentList.add(input.contains('Awesome'));
+        return contentList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -81,15 +81,18 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String removeDuplicateWords(String sentence) {
         // Split the sentence into words
-
         // Create a set to store the unique words
-
+        Set<String> sentenceSet = new Set<String>(sentence.split(' '));
         // Add each word to the set
 
         // Join the unique words back into a sentence
-
+        String newSentence = '';
+        for(String word: sentenceSet) {
+            newSentence += word + ' ';
+        }
+        newSentence = newSentence.trim();
         // Return the sentence with unique words
-        return null; // Replace null with the variable you used to store the result
+        return newSentence; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -102,17 +105,19 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer countVowels(String str) {
         // Initialize the result Integer
-
-        /*
-        for () {
+        str = str.toLowerCase();
+        Integer numberOfVowels = 0;
+        List<String> charList = str.split('');
+        for(String char : charList) {
+            if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+            numberOfVowels = numberOfVowels + 1;
+            }
+        }
             // get individual characters from the string - hint use substring or split
             // check if the character is a vowel
             // if it is a vowel, increment the result Integer
+            return numberOfVowels;
         }
-        */
-
-        return null; // Replace null with the variable you used to store the result
-    }
 
     /**
      * Question 5
@@ -234,6 +239,8 @@ public with sharing class ClassesObjectsMethods {
         // Book constructor to initialize the title and author
         public Book() {
             // Initialize the title and author
+            String title = 'Catch-22';
+            String author = 'Joseph Hellinger';
         }
     
         // Method that returns the details of the book
