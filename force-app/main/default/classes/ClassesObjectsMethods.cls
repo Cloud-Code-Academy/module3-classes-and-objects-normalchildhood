@@ -173,9 +173,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer generateRandomNumber() {
         // Use Math class to generate number between 50 and 100
-
+        Integer randomNumber = Math.random();
         // Return the random integer
-        return null; // Replace null with the variable you used to store the result
+        return randomNumber; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -186,11 +186,11 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String getCurrentDate() {
         // Get the todays date
-
+        Date todaysDate = today();
         // Format the current date
-
+        String formattedDate = todaysDate.format();
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return formattedDate; // Replace null with the variable you used to store the result
     }
 
     /**
