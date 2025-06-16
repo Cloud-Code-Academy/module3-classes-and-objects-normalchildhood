@@ -134,8 +134,8 @@ public with sharing class ClassesObjectsMethods {
         String stringOfNames = '';
         // Loop through the list of scientists' names
         for(String name : scientistNames){
-            if(name.containsIgnoreCase(g)){
-                stringOfNames = name + ' ,';
+            if(name.containsIgnoreCase('g')){
+                stringOfNames += name + ',';
             }
         }
             // If the name doesn't contain the letter 'G', skip this iteration
@@ -143,7 +143,7 @@ public with sharing class ClassesObjectsMethods {
             // Add the name to the result string, followed by a comma
 
         // Remove the last comma from the result string
-        stringOfNames.removeEnd(' ,');
+        stringOfNames = stringOfNames.removeEnd(',');
         return stringOfNames; // Replace null with the variable you used to store the result
     }
 
