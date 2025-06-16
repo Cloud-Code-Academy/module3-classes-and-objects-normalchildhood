@@ -105,19 +105,19 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer countVowels(String str) {
         // Initialize the result Integer
-        Integer numberOfVowels = str.countMatches(a,e,i,o,u);
-        List<String> charList = new List<String>(str.split());
-        for (Integer i = 0; i > numberOfVowels; i++) {
-            if(charList[i] == a || e || i || o || u) {
-                charList.add(str);
+        str = str.toLowerCase();
+        Integer numberOfVowels = 0;
+        List<String> charList = str.split('');
+        for(String char : charList) {
+            if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+            numberOfVowels = numberOfVowels + 1;
             }
+        }
             // get individual characters from the string - hint use substring or split
             // check if the character is a vowel
             // if it is a vowel, increment the result Integer
+            return numberOfVowels;
         }
-
-        return charList; // Replace null with the variable you used to store the result
-    }
 
     /**
      * Question 5
