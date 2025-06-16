@@ -52,6 +52,7 @@ public with sharing class ClassesObjectsMethods {
         return helloList; // Replace null with the variable you used to store the result
     }   
 
+
     /**
      * Question 2
      * Check if the input string starts with 'Sales', ends with 'Force', and contains 'Awesome'.
@@ -80,15 +81,18 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String removeDuplicateWords(String sentence) {
         // Split the sentence into words
-
         // Create a set to store the unique words
-
+        Set<String> sentenceSet = new Set<String>(sentence.split(' '));
         // Add each word to the set
 
         // Join the unique words back into a sentence
-
+        String newSentence = '';
+        for(String word: sentenceSet) {
+            newSentence += word + ' ';
+        }
+        newSentence = newSentence.trim();
         // Return the sentence with unique words
-        return null; // Replace null with the variable you used to store the result
+        return newSentence; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -101,16 +105,18 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer countVowels(String str) {
         // Initialize the result Integer
-
-        /*
-        for () {
+        Integer numberOfVowels = str.countMatches(a,e,i,o,u);
+        List<String> charList = new List<String>(str.split());
+        for (Integer i = 0; i > numberOfVowels; i++) {
+            if(charList[i] == a || e || i || o || u) {
+                charList.add(str);
+            }
             // get individual characters from the string - hint use substring or split
             // check if the character is a vowel
             // if it is a vowel, increment the result Integer
         }
-        */
 
-        return null; // Replace null with the variable you used to store the result
+        return charList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -233,6 +239,8 @@ public with sharing class ClassesObjectsMethods {
         // Book constructor to initialize the title and author
         public Book() {
             // Initialize the title and author
+            String title = 'Catch-22';
+            String author = 'Joseph Hellinger';
         }
     
         // Method that returns the details of the book
