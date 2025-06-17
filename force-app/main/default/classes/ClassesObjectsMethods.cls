@@ -272,17 +272,19 @@ public with sharing class ClassesObjectsMethods {
 
     /**
      * Question 12
-     * Create a Book object and returns the details of the book.
+     * Create a Book object that returns the details of the book.
      * For example, createAndGetBookDetails() should return a string like "Title: A Brief History of Time, Author: Stephen Hawking".
      * @return A string containing the details of the book.
      */
     public static String createAndGetBookDetails() {
         // Create a Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        Book newBook = new Book();
+            newBook.title = 'A Brief History of Time';
+            newBook.author = 'Stephen Hawking';
+        
         // Call the getBookDetails method on the book object to get the details of the book
-
-        // Return the details of the book
-        return null; // Replace null with the variable you used to store the result
+        String bookDetails = newBook.getBookDetails();
+        return bookDetails;
     }
 
     /**
@@ -296,7 +298,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Book> generateBookList(Book myBook1) {
         // Create a list of books
-
+        List<Book> bookList = new Book<List> {
+    
+        }
         // Update the title and author of myBook1
 
         // Update the pages for myBook1 to 352
