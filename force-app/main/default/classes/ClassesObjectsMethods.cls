@@ -333,13 +333,21 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Person {
         // Declare private two instance variables - (TEXT) name and (Number) age
-        
+        private String name = '';
+        private Integer age;
         // Constructor to initialize the name and age
-    
-        // Method introduceYourself that returns the details of the person        
+    public Person(String name, Integer age){
+        this.name = name;
+        this.age = age;
+    }
+        // Method introduceYourself that returns the details of the person       
+        public static String introduceYourself(String name, Integer age){
+            String intro = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
+            return intro;
+        } 
         // Return a string in the format "Hello, my name is <name> and I am <age> years old."
         // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
-
+        
         // Getter method that returns the name of the person
 
         // Getter method that returns the age of the person
