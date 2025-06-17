@@ -290,28 +290,40 @@ public with sharing class ClassesObjectsMethods {
     /**
      * Question 13
      * Create and update two Book objects and returns the books.
-     * For example, generateBookList(Book) should return a list like ["Title: Harry Potter and the Chamber of Secrets, Author: J.K. Rowling", "Title: A Brief History of Time, Author: Stephen Hawking"].
+     * For example, generateBookList(Book) should return a list like ["Title: Harry Potter and the Chamber of Secrets, Author: J.K. Rowling", 
+     * "Title: A Brief History of Time, Author: Stephen Hawking"].
      * Update Book 1 values: title = "Harry Potter and the Chamber of Secrets", author = "J.K. Rowling", pages = 352
      * Book 2 values: title = "A Brief History of Time", author = "Stephen Hawking"
      * @param myBook1 The first book object.
      * @return return a list of books.
      */
     public static List<Book> generateBookList(Book myBook1) {
+        List<Book> bookList = new List<Book>();
         // Create a list of books
-        List<Book> bookList = new Book<List> {
-    
-        }
-        // Update the title and author of myBook1
+        myBook1.title = 'Harry Potter and the Chamber of Secrets';
+        myBook1.author = 'J.K. Rowling';
+        bookList.add(myBook1);
 
+        Book myBook2 = new Book();
+        myBook2.title = 'A Brief History of Time';
+        myBook2.author = 'Stephen Hawking';
+        bookList.add(myBook2);
+        
+        // Update the title and author of myBook1
+        myBook1.pages = 352;
         // Update the pages for myBook1 to 352
 
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        myBook2.pages = 256;
         // Update the pages for A Brief History of Time to 256
-
+        String details1 = myBook1.generateBookList();
+        String details2 = myBook2.generateBookList();
         // Add the book to the list
         
-        return null; // Replace null with the variable you used to store the result      
+        List<String> bookDetailsList = new List<String>();
+        bookDetailsList.add(details1);
+        bookDetailsList.add(details2);
+        return bookDetailsList; // Replace null with the variable you used to store the result      
     }
 
 
