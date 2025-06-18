@@ -372,20 +372,18 @@ public with sharing class ClassesObjectsMethods {
     public static List<String> personDetails() {
         List<String> results = new List<String>();
         // Create a new instance of Person class
-        Person newPerson = new Person();
+        Person newPerson = new Person('John Doe', 28);
         // Name the person 'John Doe' and set the age to 28
-        newPerson name = 'John Doe';
-        newPerson age = 28;
         // Add the details of the person using the introduceYourself method
-        String personDetails = newPerson.introduceYourself();
-        return personDetails;
+        String introduction = newPerson.introduceYourself();
+        results.add(introduction);
         // Get the name of the person using the getter method and add it to the list
         String personName = newPerson.getPersonName();
         results.add(personName);
         // Get the age of the person using the getter method and add it to the list
         Integer personAge = newPerson.getPersonAge();
         results.add(String.valueOf(personAge));
-        return personDetails; // Replace null with the variable you used to store the result
+        return results; // Replace null with the variable you used to store the result
     }
 
     /**
