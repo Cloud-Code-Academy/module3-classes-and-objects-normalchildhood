@@ -341,7 +341,7 @@ public with sharing class ClassesObjectsMethods {
         this.age = age;
     }
         // Method introduceYourself that returns the details of the person       
-        public static String introduceYourself(String name, Integer age){
+        public String introduceYourself(String name, Integer age){
             String intro = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
             return intro;
         } 
@@ -349,12 +349,17 @@ public with sharing class ClassesObjectsMethods {
         // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
         
         // Getter method that returns the name of the person
-
+        public String getPersonName(){return name;}
         // Getter method that returns the age of the person
-
+        public Integer getPersonAge(){return age;}
         // Setter method that sets the name of the person
-
+        public void setPersonName(String name){
+            this.setPersonName = name;
+        }
         // Setter method that sets the age of the person
+        public void setPersonAge(Integer age){
+            this.age = age;
+        }
     }
 
     /**
