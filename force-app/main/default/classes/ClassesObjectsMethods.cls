@@ -416,12 +416,6 @@ public with sharing class ClassesObjectsMethods {
         Person newPerson = new Person(name, age);
         personList.add(newPerson);
         }
-            // Create a new Person object for each name
-        
-            // Add the new Person object to the list of Person objects
-        
-        
-        // Return the list of Person objects
         return personList; // Replace null with the variable you used to store the result
     }
 
@@ -437,6 +431,18 @@ public with sharing class ClassesObjectsMethods {
      * @return The Person object of the older person.
      */
     public static Person getOlderPerson(Person person1, Person person2) {
+        Integer person1Age = person1.getPersonAge();
+        Integer person2Age = person2.getPersonAge();
+
+        Boolean person1Older = person1Age > person2Age;
+        Boolean equalAge = person1Age == person2Age;
+
+        if(person1Older == true || equalAge == true){
+            return person1;
+        }
+        else{
+            return person2;
+        }
         return null; // Replace null with the variable you used to store the result
     }
 }
