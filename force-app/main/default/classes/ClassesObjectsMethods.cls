@@ -434,15 +434,11 @@ public with sharing class ClassesObjectsMethods {
         Integer person1Age = person1.getPersonAge();
         Integer person2Age = person2.getPersonAge();
 
-        Boolean person1Older = person1Age > person2Age;
-        Boolean equalAge = person1Age == person2Age;
-
-        if(person1Older == true || equalAge == true){
+        if(person1Age >= person2Age){
             return person1;
         }
         else{
             return person2;
         }
-        return null; // Replace null with the variable you used to store the result
     }
 }
