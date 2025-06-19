@@ -108,8 +108,8 @@ public with sharing class ClassesObjectsMethods {
         str = str.toLowerCase();
         Integer numberOfVowels = 0;
         List<String> charList = str.split('');
-        for(String char : charList) {
-            if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u'){
+        for(String vowelChar : charList) {
+            if(vowelChar == 'a' || vowelChar == 'e' || vowelChar == 'i' || vowelChar == 'o' || vowelChar == 'u'){
             numberOfVowels = numberOfVowels + 1;
             }
         }
@@ -173,9 +173,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer generateRandomNumber() {
         // Use Math class to generate number between 50 and 100
-        Integer randomNumber = Math.random();
+        Integer result = Integer.valueOf(Math.round(Math.random() * 51 + 50));
         // Return the random integer
-        return randomNumber; // Replace null with the variable you used to store the result
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -185,13 +185,11 @@ public with sharing class ClassesObjectsMethods {
      * @return The current date in the current user locale format.
      */
     public static String getCurrentDate() {
-        // Get the todays date
-        Date todaysDate = today();
-        // Format the current date
-        String formattedDate = todaysDate.format();
-        // Return the result
-        return formattedDate; // Replace null with the variable you used to store the result
-    }
+    Date todaysDate = Date.today();
+    String formattedDate = todaysDate.format(); // <-- built-in to Date (but context-sensitive)
+    return formattedDate;
+}
+
 
     /**
      * Question 9
