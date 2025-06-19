@@ -43,11 +43,11 @@ public with sharing class ClassesObjectsMethods {
         // Initialize a String with 'Hello, Salesforce!'
         String hello = 'Hello, Salesforce!';
         // Get the length of the String 
-        helloList.add(0, string.valueOf(hello.length()));   
+        helloList.add(String.valueOf(hello.length()));   
         // Get a substring of the String of the first 5 characters
-        helloList.add(1, hello.substring(0, 5));
+        helloList.add(hello.substring(0, 5));
         // Convert the String to lower case
-        helloList.add(2, hello.toLowerCase());
+        helloList.add(hello.toLowerCase());
 
         return helloList; // Replace null with the variable you used to store the result
     }   
